@@ -1,0 +1,351 @@
+<div class="container" *ngIf="total === 0">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h4>
+                    Carrinho está vazio
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btns-empty">
+                <a routerLink="/produtos">
+                    <button type="button" class="btn btn-continuar btn-outline-primary btn-lg">
+                        Continuar comprando
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!----- Carrinho ------->
+<ng-container *ngIf="total !== 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-top">
+                    <div class="text-description">
+                        Carrinho de compras
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            
+            <div class="row box full">
+
+                <div class="col-8">
+                    <div class="row bottom" *ngFor="let produto of items; let i = index;">
+                        <div class="col-md-3">
+                            <div class="cart1">
+                                <img class="img-fluid img-cart" [attr.src]="'http://localhost:3002/'+ produto.imagem"
+                                alt="{{produto.nome}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 nome">
+                            <div class="cart2">
+
+                                <p style="font-weight: 500;">Nome</p><br>
+
+                                <p class="nome-prod">{{produto.nome}}</p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 tipo-produto">
+                            <div class="cart2">
+
+                                <p style="font-weight: 500;">Tipo</p><br>
+
+                                <p style="color: #e42f2f;">( {{produto.tipo}} )</p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 qtd">
+                            <div class="cart2b">
+
+                                <p style="font-weight: 500;">Quantidade</p><br>
+
+                                <div class="value-button"  (click)="ChangeQuantity(i, false)" id="decrease">
+                                    <i class="material-icons">remove</i>
+                                </div>
+
+                                <input type="number"  id="number" [value]="produto.carrinhoQuantity "
+                                    [max]="produto.existingCartItems">
+
+                                <div class="value-button" (click)="ChangeQuantity(i, true)" id="increase">
+                                    <i class="material-icons">add</i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 preco">
+                            <div class="cart2b">
+
+                                <p style="font-weight: 500;">Preço</p><br>
+
+                                <p>{{ produto.preco | currency: 'BRL'}}</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-4 ">
+                    <div class="row scrollTop">
+                        <div class="col-md-4">
+
+                            <div class="box-info">
+
+                                <div class="box-text">
+                                    <p>Resumo do pedido</p>
+                                </div><br>
+
+                                <div class="box-value">
+
+                                    <div class="prod-qtd">
+                                        Total de produtos: {{ total }}
+                                    </div>
+                                    <hr>
+
+                                    <div class="prod-subtotal">
+                                        Subtotal: <span>{{ subtotal | currency: 'BRL' }}</span>
+                                    </div>
+                                    <hr>
+
+                                </div>
+
+
+                                <div *ngIf="disabled === false">
+
+                                    <p>Entrega de 1 à 2 dias</p>
+
+                                </div>
+                                
+                                <div *ngIf="disabled === true">
+                                    <div class="consulta-frete">
+                                        <p>
+                                            Informe seu CEP para consultar os prazos de entrega para sua casa
+                                        </p>
+                                        <mat-form-field>
+                                            <mat-label>CEP</mat-label>
+                                            <input mask="00000-000" matInput [(ngModel)]="insertFrete.sCepDestino" class="input-cep" type="text" name="cep" id="cep">
+                                        </mat-form-field>
+
+                                        <button (click)="cepPost()" class="btn btn-calcular btn-primary"
+                                            type="submit">Calcular</button><br><br>
+
+                                            <div class="frete">
+                                                Frete: <span>R$&nbsp;{{ valorFrete[0].Valor }}</span>
+                                            </div>
+                                            <hr>
+        
+                                            <div class="total">
+                                                Total: <span>{{ valorTotal | currency: 'BRL' }}</span>
+                                            </div>
+
+                                    </div>
+                                </div><br>
+
+                                <div *ngFor="let t of ticket">
+                                    <div class="btn-compra" *ngIf="subtotal >= t.valor">
+                                        <!-- (click)="storageAdd()" -->
+                                        <a (click)="storageAdd()" routerLink="/finalizar-pedido">
+                                            Comprar
+                                        </a>
+
+                                    </div><br>
+
+                                    <div class="btn-back">
+
+                                        <i class="material-icons cart">
+                                            keyboard_backspace
+                                        </i>
+                                        <a routerLink="/produtos">
+                                            continuar comprando
+                                        </a>
+
+                                        <p *ngIf="subtotal < t.valor">
+                                            <img src="/assets/img/warning.png" alt="" width="17">
+                                            O valor mínimo de compra é de {{ t.valor | currency: 'BRL' }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------- Div Responsiva ---------------------->
+            <!--------------------------------------------------------->
+
+            <div class="row box small">
+
+                <div class="col-8">
+                    <div class="row bottom" *ngFor="let produto of items; let i = index;">
+                        <div class="col-md-3">
+                            <div class="cart1">
+                                <img class="img-fluid img-cart" [attr.src]="'http://localhost:3002/'+ produto.imagem"
+                                alt="{{produto.nome}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 nome">
+                            <div class="cart2">
+
+                                <p style="font-weight: 500;">Nome</p><br>
+
+                                <p class="nome-prod">{{produto.nome}}</p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 tipo-produto">
+                            <div class="cart2">
+
+                                <p style="font-weight: 500;">Tipo</p><br>
+
+                                <p style="color: #e42f2f;">( {{produto.tipo}} )</p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 qtd">
+                            <div class="cart2b">
+
+                                <p style="font-weight: 500;">Quantidade</p><br>
+
+                                <div class="value-button"  (click)="ChangeQuantity(i, false)" id="decrease">
+                                    <i class="material-icons">remove</i>
+                                </div>
+
+                                <input type="number"  id="number" [value]="produto.carrinhoQuantity "
+                                    [max]="produto.existingCartItems">
+
+                                <div class="value-button" (click)="ChangeQuantity(i, true)" id="increase">
+                                    <i class="material-icons">add</i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 preco">
+                            <div class="cart2b">
+
+                                <p style="font-weight: 500;">Preço</p><br>
+
+                                <p>{{ produto.preco | currency: 'BRL'}}</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+    
+                            <div class="box-info">
+    
+                                <div class="box-text">
+                                    <p>Resumo do pedido</p>
+                                </div><br>
+    
+                                <div class="box-value">
+    
+                                    <div class="prod-qtd">
+                                        Total de produtos: {{ total }}
+                                    </div>
+                                    <hr>
+    
+                                    <div class="prod-subtotal">
+                                        Subtotal: <span>{{ subtotal | currency: 'BRL' }}</span>
+                                    </div>
+                                    <hr>
+    
+                                </div>
+    
+    
+                                <div *ngIf="disabled === false">
+    
+                                    <p>Entrega de 1 à 2 dias</p>
+    
+                                </div>
+                                
+                                <div *ngIf="disabled === true">
+                                    <div class="consulta-frete">
+                                        
+                                        <div class="text-frete">
+                                            <p>
+                                                Informe seu CEP para consultar os prazos de entrega para sua casa
+                                            </p>
+                                        </div>
+                                        
+                                        <mat-form-field>
+                                            <mat-label>CEP</mat-label>
+                                            <input mask="00000-000" matInput [(ngModel)]="insertFrete.sCepDestino" class="input-cep" type="text" name="cep" id="cep">
+                                        </mat-form-field>
+    
+                                        <button (click)="cepPost()" class="btn btn-calcular btn-primary"
+                                            type="submit">Calcular</button><br><br>
+    
+                                            <div class="frete">
+                                                Frete: <span>R$&nbsp;{{ valorFrete[0].Valor }}</span>
+                                            </div>
+                                            <hr>
+        
+                                            <div class="total">
+                                                Total: <span>{{ valorTotal | currency: 'BRL' }}</span>
+                                            </div>
+    
+                                    </div>
+                                </div><br>
+    
+                                <div *ngFor="let t of ticket">
+                                    <div class="btn-compra" *ngIf="subtotal >= t.valor">
+    
+                                        <a routerLink="/finalizar-pedido">
+                                            Comprar
+                                        </a>
+    
+                                    </div><br>
+    
+                                    <div class="btn-back">
+    
+                                        <i class="material-icons cart">
+                                            keyboard_backspace
+                                        </i>
+                                        <a routerLink="/produtos">
+                                            continuar comprando
+                                        </a>
+
+                                        <div class="alert-btn" *ngIf="subtotal < t.valor">
+                                            <p>
+                                                <img src="/assets/img/warning.png" alt="" width="17">
+                                                O valor mínimo de compra é de {{ t.valor | currency: 'BRL' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,293 @@
+.text-description {
+    text-align: center;
+    margin: 55px 0 50px 0;
+    font-weight: 300;
+    font-size: 40px;
+}
+h4 {
+    margin: 55px 0 30px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+}
+.info-pedidos {
+    margin-bottom: 50px;
+}
+.text-pedido p {
+    font-size: 18px;
+}
+.subTotal,
+.descontos,
+.frete,
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-nf {
+    margin: 50px 0 0 180px;
+}
+.progress-area {
+    height: 200px;
+    margin: 60px 0 25px 0;
+}
+.area-pro {
+    width: 950px;
+    margin: auto;
+}
+.prog {
+    background-color: #00efd1;
+}
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: #00efd1;
+}
+.bol1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00efd1;
+    border-radius: 30px;
+    margin: -247px 0px 0px 0px;
+}
+.bol2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00efd1;
+    border-radius: 30px;
+    margin: -247px 0px 0px 300px;
+}
+.bol3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00efd1;
+    border-radius: 30px;
+    margin: -247px 0px 0px 621px;
+}
+.bol4 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00efd1;
+    border-radius: 30px;
+    margin: -247px 0px 0px 900px;
+}
+.cart {
+    margin: 20px 0 0 3px;
+}
+.confirmado {
+    margin: 20px 0 0 12px;
+}
+.transporte {
+    margin: 20px 0 0 5px;
+}
+.entregue {
+    margin: 20px 0 0 5px;
+}
+
+.cart p {
+    margin: 5px 0 0 -6px;
+}
+.confirmado p {
+    margin: 5px 0 0 -20px;
+}
+.transporte p {
+    margin: 5px 0 0 -33px;
+    width: 129px;
+}
+.entregue p {
+    margin: 5px 0 0 -5px;
+}
+.hr {
+    margin-top: -80px;
+}
+.drop {
+    margin-top: -70px;
+    margin-bottom: 25px;
+}
+.info-entrega {
+    margin-bottom: 50px;
+}
+.text-address {
+    text-transform: uppercase;
+}
+.btn-outline-primary:hover {
+    background-color: transparent;
+    color: #4fa4ff;
+}
+
+
+@media (max-width: 768px) {
+    .btn-nf {
+        margin: 50px 0 0 40px;
+    }
+    .area-pro {
+        width: 700px;
+    }
+    .progress {
+        height: 10px;
+        width: 700px;
+    }
+    .bol1 {
+        margin: -247px 0px 0px -3px;
+    }
+    .bol2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 204px;
+    }
+    .bol3 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 440px;
+    }
+    .bol4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 655px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .btn-nf {
+        margin: 50px 0 0 73px;
+    }
+    .area-pro {
+        width: 380px;
+    }
+    .info-pedidos {
+        margin-bottom: 50px;
+        padding: 30px;
+    }
+    .progress {
+        height: 10px;
+        width: 374px;
+    }
+    .bol1 {
+        margin: -247px 0px 0px -3px;
+    }
+    .bol2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 105px;
+    }
+    .bol3 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 222px;
+    }
+    .bol4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 340px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .area-pro {
+        width: 327px;
+    }
+    .info-pedidos {
+        margin-bottom: 50px;
+        padding: 30px;
+    }
+    .progress {
+        height: 10px;
+        width: 328px;
+    }
+    .bol1 {
+        margin: -247px 0px 0px -3px;
+    }
+    .bol2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 85px;
+    }
+    .bol3 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 190px;
+    }
+    .bol4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 282px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .text-row {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .btn-nf {
+        margin: 50px 0 0 30px;
+    }
+    .area-pro {
+        width: 306px;
+    }
+    .progress {
+        width: 294px;
+    }
+    .bol1 {
+        margin: -247px 0px 0px -3px;
+    }
+    .bol2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 80px;
+    }
+    .bol3 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 174px;
+    }
+    .bol4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #00efd1;
+        border-radius: 30px;
+        margin: -247px 0px 0px 255px;
+    }
+    .transporte p {
+        margin: 5px 0 0 -8px;
+        width: 95px;
+    }
+}

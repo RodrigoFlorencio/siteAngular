@@ -1,0 +1,165 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.barra-descricao {
+  margin: 40px 0 20px 359px;
+  font-size: 40px;
+  font-weight: 300;
+  color: #333;
+}
+.barra2 {
+  width: 174px;
+  height: 10px;
+  margin: 5px 0 0px 424px;
+  background-color: #3c329c;
+  margin-bottom: 30px;
+}
+form {
+  margin-left: 75px;
+}
+.input {
+  margin-bottom: 10px;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 15px;
+  outline: none;
+}
+.barrah {
+  width: 2px;
+  height: 300px;
+  margin-top: 20px;
+  background-color: black;
+}
+iframe {
+  margin-top: 25px;
+  margin-left: -22px;
+  border: 2px solid #b1a6a6;
+  border-radius: 15px;
+}
+
+
+/* ================================= */
+
+
+@media (max-width: 1024px) {
+
+    .barra-descricao {
+        margin: 10px 0 20px 315px;
+        font-size: 38px;
+        color: #333;
+    }
+    .barra2[_ngcontent-umo-c21] {
+        width: 174px;
+        height: 10px;
+        margin: 10px 0 0px 341px;
+        background-color: #3c329c;
+        margin-bottom: 30px;
+    }
+    iframe {
+        margin-top: 25px;
+        width: 440px;
+        margin-left: -55px;
+        border: 2px solid #b1a6a6;
+        border-radius: 15px;
+    }
+  
+}
+  
+  @media (max-width: 768px) {
+  
+    .barra-descricao {
+        margin: 10px 0 20px 178px;
+        font-size: 38px;
+        color: #333;
+    }
+    .barra2 {
+        margin: 5px 0 0px 283px;
+    }
+    .text-area {
+        width: 188px;
+    }
+    iframe {
+        margin-top: 25px;
+        width: 340px;
+        margin-left: -55px;
+        border: 2px solid #b1a6a6;
+        border-radius: 15px;
+    }
+    .pague {
+      width: 319px;
+      margin-left: -20px;
+      margin-top: 0px;
+    }
+  
+  }
+  
+@media (max-width: 425px) {
+  
+    .barra-descricao {
+        margin: 10px 0 20px 50px;
+        font-size: 33px;
+        color: #333;
+    }
+    .barra2 {
+        margin: 5px 0 19px 126px;
+    }
+    form {
+        margin-left: 4px;
+    }
+    .text-area {
+        width: 320px;
+    }
+    .barrah {
+        display: none;
+    }
+    iframe {
+        width: 340px;
+        margin: 0 0 0 30px;
+        border: 2px solid #b1a6a6;
+        border-radius: 15px;
+    }
+    .pague {
+      width: 319px;
+      margin-left: -25px;
+      margin-top: 0px;
+    }
+    
+}
+
+@media (max-width: 375px) {
+
+  iframe {
+    width: 342px;
+    margin: auto;
+    border: 2px solid #b1a6a6;
+    border-radius: 15px;
+  }
+
+}
+  
+@media (max-width: 320px) {
+  
+    .barra-descricao {
+        margin: 10px 0 20px 23px;
+        font-size: 28px;
+        color: #333;
+    }
+    .barra2 {
+        margin: 5px 0 19px 77px;
+    }
+    .text-area {
+        width: 282px;
+    }
+    iframe {
+        width: 290px;
+        margin: 0 0px 0 3px;
+        border: 2px solid #b1a6a6;
+        border-radius: 15px;
+    }
+  
+}

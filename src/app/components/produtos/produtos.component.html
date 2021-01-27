@@ -1,0 +1,56 @@
+<!---- Filtro ---->
+<div class="container filtro">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="col-filtro">
+                <p>Filtrar por categoria:</p>
+            </div>
+        </div>
+        <div class="col-md-3 filtro-select">
+            <select name="" id="">
+                <option value="">Frutas</option>
+                <option value="">Legumes</option>
+                <option value="">Verduras</option>
+                <option value="" selected>Todos</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<!------ Galeria Produtos -------->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let prod of produtos" class="col-md-3 box-ft">
+            <div class="ft-catalogo">
+                
+                <img class="img-fluid ft-produto" [attr.src]="'http://localhost:3002/'+ prod.imagem" alt="{{prod.nome}}" (click)="selectProduct(prod.id)">
+                <img class="img-fluid ft-promo" width="90" height="34" [attr.src]="'http://localhost:3002/'+ prod.promo" alt="">
+                <img class="img-fluid ft-promo" width="90" height="34" [attr.src]="'http://localhost:3002/'+ prod.desconto" alt="">
+                
+            </div>
+
+            <div class="descricao-pdt">
+                <p class="text-nome">
+                    {{prod.nome}} <span class="text-tipo">({{prod.tipo}})</span>
+                </p><br>
+            </div>
+
+            <div class="fornecedor">
+                <span class="text-fornecedor">vendido por {{prod.fornecedor}}</span>
+            </div>
+
+            <hr>
+            <div>
+                <p>
+                    {{prod.preco | currency: 'BRL'}}
+                    <button (click)="addToCart(prod)" type="button" class="btn btn-outline-primary"  
+                    [disabled]="prod.quantidade < 5"
+                    [class.btn-outline-danger]="prod.quantidade < 5">
+                        Add Carrinho
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

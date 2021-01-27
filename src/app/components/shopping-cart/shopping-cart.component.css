@@ -1,0 +1,370 @@
+.pay {
+    width: 300px;
+}
+
+.small {
+    display: none;
+}
+.cart-top {
+    height: 130px;
+}
+.text-description {
+    margin: 55px 0 30px 0;
+    font-weight: 300;
+    font-size: 30px;
+}
+h4 {
+    margin: 55px 0 30px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+}
+.btns-empty {
+    margin: 0px -15px 0px 0;
+    text-align: center;
+}
+.img-cart {
+    width: 190px;
+    height: 133px;
+    margin: 30px;
+}
+
+.value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    padding: 10px 0 12px;
+    text-align: center;
+    background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#increase,
+#decrease {
+    cursor: pointer;
+}
+#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+}
+#decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+    background: red;
+    color: white;
+}
+#increase {
+    margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+    background: green;
+    color: white;
+}
+p {
+    color: #403a3a;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 100;
+}
+.btn {
+    margin-right: 15px;
+}
+.container {
+    margin-bottom: 100px;
+}
+.cart1 {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 30px;
+}
+.box-info {
+    width: 300px;
+    margin-left: 60px;
+    padding: 15px;
+    height: 690px;
+    box-shadow: 0px 10px 20px 15px #f1f1f1;
+}
+.btn-compra {
+    width: 270px;
+    height: 45px;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 200;
+    text-align: center;
+    background-color: #40e0d0;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.btn-compra a {
+    color: white;
+    text-decoration: none;
+}
+.btn-compra:hover {
+    width: 280px;
+    height: 55px;
+    border-radius: 160px;
+    padding: 15px;
+}
+.box-value {
+    width: 270px;
+    height: 150px;
+    background-color: white;
+    padding: 15px;
+}
+.prod-qtd {
+    width: 250px;
+    height: 35px;
+    font-size: 18px;
+}
+.prod-subtotal {
+    width: 250px;
+    height: 35px;
+}
+.frete {
+    width: 250px;
+    height: 35px;
+}
+.total {
+    width: 250px;
+    height: 35px;
+}
+span {
+    float: right;
+    margin-right: 10px;
+}
+.scrollTop {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 20px;
+}
+.btn-back a {
+    color: #2b2626;
+    margin: -6px 0px 0px 30px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.btn-back i {
+    position: absolute;
+}
+
+.btn-back p {
+    font-size: 14px;
+    color: red;
+}
+.btn-back img {
+    margin: -4px 4px 0px -4px;
+}
+
+.consulta-frete p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+
+/*****************************
+******************************/
+
+
+
+@media (max-width: 1024px) {
+    .box-info {
+        width: 300px;
+        margin-left: 30px;
+        padding: 15px;
+        height: 690px;
+        box-shadow: 0px 10px 20px 15px #f1f1f1;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 770px;
+        margin-left: -60px;
+        margin-bottom: 10px;
+    }
+    .box-info {
+        width: 300px;
+        margin-left: -60px;
+        padding: 15px;
+        height: 690px;
+        box-shadow: 0px 10px 20px 15px #f1f1f1;
+    }
+    .cart2 {
+        position: absolute;
+        margin: 0px 0 0 65px;
+    }
+    .cart2b {
+        position: absolute;
+        margin: 135px 0 0 -150px;
+    }
+    .bottom {
+        margin-bottom: 80px;
+    }
+    .nome-prod {
+        margin-right: 10px;
+    }
+    p {
+        color: #403a3a;
+        font-size: 20px;
+        width: 240px;
+        margin-top: 10px;
+        font-weight: 100;
+    }
+}
+
+@media (max-width: 425px) {
+    .full {
+        display: none;
+    }
+    .small {
+        display: flex;
+    }
+    .container {
+        margin-bottom: 50px;
+    }
+    p {
+        color: #403a3a;
+        font-size: 20px;
+        width: 220px;
+        margin-top: 10px;
+        font-weight: 100;
+    }
+    .box {
+        width: 460px;
+        margin-left: -60px;
+        margin-bottom: 10px;
+    }
+    .img-cart {
+        width: 190px;
+        height: 133px;
+        margin: 30px 0 0 150px;
+    }
+    .cart2 {
+        position: relative;
+        text-align: center;
+        margin: 40px 0 0 100px;
+    }
+    .cart2b {
+        position: relative;
+        text-align: center;
+        margin: 70px 0 0 100px;
+    }
+    #decrease {
+        border-radius: 8px 0 0 8px;
+        background: red;
+        color: white;
+        margin-left: 60px;
+    }
+    .nome {
+        margin: 0 0 0 -90px;
+    }
+    .tipo-produto {
+        position: absolute;
+        margin: 170px 0 0 120px;
+    }
+    .qtd {
+        margin: -30px 0 0 -90px;
+    }
+    .preco {
+        margin: -160px 0 0 125px;
+    }
+    .box-info {
+        width: 300px;
+        margin: 0 0 0 100px;
+        padding: 15px;
+        height: 690px;
+        box-shadow: 0px 10px 20px 15px #f1f1f1;
+    }
+}
+
+@media (max-width: 375px) {
+    .box {
+        width: 420px;
+        margin-left: -60px;
+        margin-bottom: 10px;
+    }
+    p {
+        color: #403a3a;
+        font-size: 20px;
+        width: 180px;
+        margin-top: 10px;
+        font-weight: 100;
+    }
+    #decrease {
+        border-radius: 8px 0 0 8px;
+        background: red;
+        color: white;
+        margin-left: 20px;
+    }
+    .img-cart {
+        width: 190px;
+        height: 172px;
+        margin: 0 0 0 130px;
+    }
+    .nome {
+        margin: 0 0 0 -70px;
+    }
+    .qtd {
+        margin: -30px 0 0 -70px;
+    }
+    .box-info {
+        margin: 0 0 0 70px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .box {
+        width: 365px;
+        margin-left: -60px;
+        margin-bottom: 10px;
+    }
+    .img-cart {
+        margin: 0 0 0 110px;
+    }
+    .box-info {
+        height: 710px;
+        margin: 0 0 0 40px;
+    }
+    p {
+        width: 110px;
+    }
+    .box-text p {
+        width: 290px;
+    }
+    .text-frete p {
+        width: 290px;
+    }
+    .alert-btn {
+        width: 250px;
+    }
+    .alert-btn p {
+        width: 290px;
+    }
+    .nome {
+        margin: 0 0 0 -45px;
+    }
+    .qtd {
+        margin: 0 0 0 -45px;
+    }
+    #decrease {
+        border-radius: 8px 0 0 8px;
+        background: red;
+        color: white;
+        margin-left: -8px;
+    }
+
+}

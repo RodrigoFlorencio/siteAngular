@@ -1,0 +1,315 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.navbar {
+  z-index: 1;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+li {
+  font-size: 17px;
+}
+a li {
+  list-style: none;
+  float: right;
+  margin-right: 20px;
+}
+.dropdown-menu a {
+  color: black;
+  padding: 10px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  height: 140px;
+}
+i {
+  list-style: none;
+  margin-top: 10px;
+  float: right;
+  margin-right: 16px;
+}
+.topo {
+  height: 150px;
+}
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-top: 10px;
+}
+.cart {
+  position: absolute;
+  margin: 120px 0 0 600px;
+}
+.person {
+  margin: 85px 0px 0 720px;
+  position: absolute;
+}
+.car {
+  position: absolute;
+  margin: 123px 0 0 630px;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: pointer;
+}
+a .car {
+  color: black;
+}
+.exit {
+  position: absolute;
+  right: 292px;
+  top: 8px;
+  font-size: 15px;
+}
+.exit a {
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+.user {
+  position: absolute;
+  margin: 89px 0 0 750px;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.user a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.name {
+  position: absolute;
+  margin: 89px 0 0 630px;
+}
+.name span {
+  color: #00d7fc;
+}
+.car-qtd {
+  width: 32px;
+  position: absolute;
+  margin: 118px 0 0 820px;
+  background-color: #db0000;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 25px;
+}
+
+
+/* Modal Login */
+
+
+.input {
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 15px;
+  outline: none;
+}
+
+
+/***************************
+***************************/
+
+
+.barra-menu {
+  width: 100%;
+  height: 60px;
+  background-color: #343a40;
+  color: white;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: #333;
+}
+.btn, .btn-outline-success {
+  color: white;
+  border-color: white;
+}
+.header {
+  width: 100%;
+  height: 800px;
+  background-image: url(/assets/img/02.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+h2 {
+  position: absolute;
+  margin: 250px 0;
+  color: white;
+  font-size: 34px;
+}
+.barra {
+  position: absolute;
+  width: 174px;
+  margin: 320px 41px;
+  height: 10px;
+  background-color: white;
+}
+.text-header {
+  position: absolute;
+  color: white;
+  margin: 360px 0px;
+  letter-spacing: 2px;
+  line-height: 30px;
+} 
+
+@media (max-width: 1024px) {
+
+  .cart {
+    position: absolute;
+    margin: 120px 0 0 504px;
+  }
+  .car {
+    margin: 123px 0 0 530px;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .car-qtd {
+    width: 32px;
+    position: absolute;
+    margin: 118px 0 0 722px;
+    background-color: #db0000;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 25px;
+  }
+  .person {
+    margin: 85px 0px 0 625px;
+    position: absolute;
+  }
+  .user {
+    margin: 88px 0 0 650px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .topo {
+    height: 190px;
+  }
+  .login-cart {
+    margin: 3px 0 0px -18px;
+  }
+  .cart {
+    margin: 160px 0 0 -97px;
+    position: absolute;
+  }
+  .car {
+    margin: 162px 0 0 -70px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .car-qtd {
+    position: absolute;
+    margin: 156px 0 0 65px;
+    background-color: #db0000;
+    width: 32px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 25px;
+  }
+  .person {
+    margin: 128px 0 0 5px;
+    position: absolute;
+  }
+  .user {
+    margin: 132px 0 0 33px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .name-user {
+    position: absolute;
+    margin: 5px 0px 0 50px;
+    font-size: 15px;
+  }
+  .name {
+    margin: 129px 0 0 -71px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+  .topo {
+    height: 190px;
+  }
+  .login-cart {
+    margin: 3px 0 0px -18px;
+  }
+  .cart {
+    margin: 160px 0 0 -97px;
+    position: absolute;
+  }
+  .car {
+    margin: 162px 0 0 -70px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .car-qtd {
+    position: absolute;
+    margin: 156px 0 0 65px;
+    background-color: #db0000;
+    width: 32px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 25px;
+  }
+  .person {
+    margin: 128px 0 0 5px;
+    position: absolute;
+  }
+  .user {
+    margin: 132px 0 0 33px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .name-user {
+    position: absolute;
+    margin: 5px 0px 0 50px;
+    font-size: 15px;
+  }
+  .name {
+    margin: 129px 0 0 -71px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+}
+
+@media (max-width: 320px) {
+
+  
+
+}

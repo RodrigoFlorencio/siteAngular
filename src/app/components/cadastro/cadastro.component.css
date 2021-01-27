@@ -1,0 +1,51 @@
+.text-description {
+    margin: 55px 0 50px 0;
+    font-weight: 300;
+    font-size: 40px;
+}
+.container {
+    margin-bottom: 50px;
+}
+.payment {
+    margin-bottom: 50px;
+}
+mat-form-field {
+    width: 450px;
+    margin: 0 10px 20px;
+}
+.select {
+    margin-bottom: 10px;
+}
+.btn-cadastrar {
+    background-color: #40e0d0;
+    color: white;
+}
+
+
+@media (max-width: 425px) {
+    
+    .text-description {
+        margin: 55px 0 50px 0;
+        font-weight: 300;
+        line-height: 50px;
+        font-size: 40px;
+    }
+    mat-form-field {
+        width: 250px;
+        margin: 0 10px 20px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    
+    .container {
+        margin-bottom: 25px;
+    }
+    .text-description {
+        margin: 55px 0 50px 0;
+        font-weight: 300;
+        line-height: 50px;
+        font-size: 30px;
+    }
+}

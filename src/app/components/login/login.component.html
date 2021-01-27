@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Tela de login</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+
+                <mat-form-field>
+                    <mat-label>E-mail:</mat-label>
+                    <input class="input" [(ngModel)]="user.email" matInput type="email" name="email" id="email"
+                        required>
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <mat-label>Senha:</mat-label>
+                    <input matInput type="password" [(ngModel)]="user.senha" name="senha" id="senha" required>
+                </mat-form-field><br>
+
+
+                <button routerLink="/cadastro" class="btnCadastro" mat-button>
+                    É novo aqui?
+                </button>
+
+                <button class="btnLogin" mat-flat-button color="primary" (click)="onLogin()" routerLink="/">
+                    Entrar
+                    <i class="material-icons">send</i>
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>

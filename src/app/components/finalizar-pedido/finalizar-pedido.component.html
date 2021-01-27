@@ -1,0 +1,297 @@
+<!-- Tela de login caso usuário não esteja logado -->
+<div class="container tela-login" *ngIf="usuario == null">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Tela de login</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form">
+
+                <mat-form-field>
+                    <mat-label>E-mail:</mat-label>
+                    <input class="input" [(ngModel)]="user.email" matInput type="email" name="email" id="email"
+                        required>
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <mat-label>Senha:</mat-label>
+                    <input matInput type="password" [(ngModel)]="user.senha" name="senha" id="senha" required>
+                </mat-form-field><br>
+
+
+                <button routerLink="/cadastro" class="btnCadastro" mat-button>
+                    É novo aqui?
+                </button>
+
+                <button class="btnLogin" mat-flat-button color="primary" (click)="onLogin()" routerLink="/">
+                    Entrar
+                    <i class="material-icons">send</i>
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Tela de finalização do pedido quando usuário já está logado -->
+<div *ngIf="usuario != null">
+    <div class="container">
+
+        <!-- <button (click)="car()">CArt</button> -->
+        <!-- <button (click)="infoFull()">Info</button> -->
+        <!-- <button (click)="update()">UPDATE</button> -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-description">
+                    Informações Endereço De Entrega
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <form [formGroup]="registerForm">
+
+                    <mat-form-field>
+                        <mat-label>CEP:</mat-label>
+                        <input formControlName="address_cep" matInput mask="00000-000" 
+                               [(ngModel)]="usuario.cep"
+                               id="address_cep" (blur)="consultaCEP($event.target.value)">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Rua:</mat-label>
+                        <input formControlName="address_endereco" matInput [(ngModel)]="usuario.logradouro"
+                               name="address_endereco">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Número:</mat-label>
+                        <input formControlName="address_numero" matInput [(ngModel)]="usuario.numero"
+                               name="address_numero" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Complemento:</mat-label>
+                        <input formControlName="address_complemento" matInput 
+                               [(ngModel)]="usuario.complemento"
+                            name="address_complemento">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Bairro:</mat-label>
+                        <input formControlName="address_bairro" matInput [(ngModel)]="usuario.bairro"
+                               name="address_bairro" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Cidade:</mat-label>
+                        <input formControlName="address_cidade" matInput [(ngModel)]="usuario.cidade"
+                               name="address_cidade" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Estado:</mat-label>
+                        <input formControlName="address_estado" matInput 
+                               [(ngModel)]="usuario.uf" name="address_estado" required>
+                    </mat-form-field>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Cadastro de novo endereço para entrega -->
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="btns">
+                    <p>
+                        <button class="btn-cred btn btn-outline-primary" type="button" data-toggle="collapse"
+                            data-target="#collapseExampleCad" aria-expanded="false" aria-controls="collapseExampleCred">
+                            Adicionar Outro Endereço
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row collapse" id="collapseExampleCad">
+            <div class="col-md-12">
+                <form [formGroup]="registerForm">
+    
+                    <mat-form-field>
+                        <mat-label>CEP:</mat-label>
+                        <input formControlName="address_cep" matInput
+                        mask = "00000-000"
+                        [(ngModel)]="address.address_cep" name="address_cep" id="address_cep"
+                        (blur)="consultaCEP($event.target.value)" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Rua:</mat-label>
+                        <input formControlName="address_endereco" matInput
+                        [(ngModel)]="usuario.logradouro" name="address_endereco" disabled>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Número:</mat-label>
+                        <input formControlName="address_numero" matInput
+                        [(ngModel)]="address.address_numero" name="address_numero" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Complemento:</mat-label>
+                        <input formControlName="address_complemento" matInput
+                        [(ngModel)]="address.address_complemento" name="address_complemento">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Ponto De Referência</mat-label>
+                        <input matInput type="text" name="referencia" id="referencia" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Bairro:</mat-label>
+                        <input formControlName="address_bairro" matInput
+                        [(ngModel)]="address.address_bairro" name="address_bairro" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Cidade:</mat-label>
+                        <input formControlName="address_cidade" matInput
+                        [(ngModel)]="address.address_cidade" name="address_cidade" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Estado:</mat-label>
+                        <input formControlName="address_estado" matInput
+                        [(ngModel)]="address.address_estado" name="address_estado" required>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Telefone:</mat-label>
+                        <input matInput mask = "(00)00000-0000" [(ngModel)]="address.address_telefone" name="address_telefone" required>
+                    </mat-form-field>
+                    
+                </form>
+            </div>
+        </div> -->
+    </div>
+
+
+    <!-- <div class="container payment">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-description">
+                    Informações De Pagamento
+                </div>
+            </div>
+        </div> -->
+
+    <!-- <div class="btns">
+            <p>
+                <button class="btn-cred btn btn-outline-primary" type="button" data-toggle="collapse"
+                    data-target="#collapseExampleCred" aria-expanded="false" aria-controls="collapseExampleCred">
+                    Cartão de Crédito
+                </button>
+            </p>
+    
+            
+            
+            <a routerLink="/thankyou">
+                <button class="btn btn-outline-primary" type="button" >
+                    Emitir Boleto
+                </button>
+            </a>
+        </div> -->
+
+
+    <!-- cartão de crédito -->
+    <!-- collapse -->
+    <!-- <div class="row cartaoCredito " id="collapseExampleCred">
+            <div class="col-md-12">
+                <form>
+    
+                    <mat-form-field class="formCred">
+                        <mat-label>Número Do Cartão:</mat-label>
+                        <input mask="0000 0000 0000 0000" matInput type="text" id="numeroCartao" required>
+                    </mat-form-field>
+    
+                    <mat-form-field class="formCred">
+                        <mat-label>Código De Segurança:</mat-label>
+                        <input mask="000" matInput type="text" id="codSeg" required>
+                    </mat-form-field><br><br>
+    
+                    <mat-form-field class="formCred">
+                        <mat-label>Validade:</mat-label>
+                        <select matNativeControl required id="mes">
+                            <option value="" placeholder="Mês">01</option>
+                            <option value="">02</option>
+                            <option value="">03</option>
+                            <option value="">04</option>
+                            <option value="">05</option>
+                            <option value="">06</option>
+                            <option value="">07</option>
+                            <option value="">08</option>
+                            <option value="">09</option>
+                            <option value="">10</option>
+                            <option value="">11</option>
+                            <option value="">12</option>
+                        </select>
+                    </mat-form-field>
+    
+                    <mat-form-field class="formCred">
+                        <select matNativeControl required id="ano">
+                            <option value="">2021</option>
+                            <option value="">2022</option>
+                            <option value="">2023</option>
+                            <option value="">2024</option>
+                            <option value="">2025</option>
+                            <option value="">2026</option>
+                            <option value="">2027</option>
+                            <option value="">2028</option>
+                        </select>
+                    </mat-form-field><br>
+    
+                    <mat-form-field class="formCred">
+                        <mat-label>Parcelamento</mat-label>
+                        <select matNativeControl required id="parcelamento">
+                            <option value="">1x sem juros</option>
+                            <option value="">2x sem juros</option>
+                            <option value="">3x sem juros</option>
+                            <option value="">4x sem juros</option>
+                            <option value="">5x sem juros</option>
+                            <option value="">6x sem juros</option>
+                            <option value="">7x sem juros</option>
+                            <option value="">8x sem juros</option>
+                            <option value="">9x sem juros</option>
+                            <option value="">10x sem juros</option>
+                        </select>
+                    </mat-form-field>
+                    
+                </form>
+            </div>
+            <a routerLink="/thank-cred">
+                <button (click)="finalizar()" type="button" class="btn btn-compra btn-outline-primary">Efetuar Compra</button><br>
+            </a>
+        </div> -->
+
+    <!-- </div> -->
+    <!-- routerLink="/thank-cred" -->
+    <a>
+        <button (click)="finalizar()" type="button" class="btn btn-compra btn-outline-primary">Efetuar
+            Compra</button><br>
+    </a>
+
+</div>
+
+<div class="container paypal" #paypal>
+    <div class="row">
+        <div class="paypal">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+ng g pipe pipes/filter
+
+no filter.pipe.ts
+//
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'filter'
+})
+export class FilterPipe implements PipeTransform {
+
+  transform(value: any, arg: any): any {
+    const resulPost = [];
+    for(const post of value) {
+      var nome = post.nome.toLowerCase();
+      if (nome.indexOf(arg.toLowerCase()) > -1) {
+           resulPost.push(post);
+      }
+    }
+    return resulPost;
+  }
+}
+
+
+//
+no produtos.component.ts
+
+  constructor(private router: Router, 
+              private produtosService: ProdutosService, 
+              private route: ActivatedRoute,
+              private cartService: CartService) { }
+
+  filterPost = '';
+
+\\
+no produtos HTML
+
+                <input  [(ngModel)]="filterPost" name="filterPost"  [ngModelOptions]="{standalone: true}" autocomplete="off" class="form-control mr-sm-2" type="search" placeholder="O que você procura?" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscar()">Procurar</button>
+            </div>
+         </div>
+    </div>
+
+    
+  
+ </div>
+
+
+<!------ Galeria Produtos -------->
+<div class="container">
+    <div class="row">
+        
+        <div *ngFor="let prod of produtos | filter:filterPost" class="col-md-3 box-ft">
+            <div class="ft-catalogo">
+                
+                <img class="img-fluid ft-produto" [attr.src]="'http://localhost:3002/'+ prod.imagem" alt="{{prod.nome}}" (click)="selectProduct(prod.id)">
+                <img class="img-fluid ft-promo" width="95" height="39" [attr.src]="'http://localhost:3002/'+ prod.promo" alt="">
+                <img class="img-fluid ft-promo" width="95" height="39" [attr.src]="'http://localhost:3002/'+ prod.desconto" alt="">
+                
+            </div>
+
+\\
+
+

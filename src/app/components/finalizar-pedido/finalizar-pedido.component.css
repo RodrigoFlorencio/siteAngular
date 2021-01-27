@@ -1,0 +1,107 @@
+/* Login */
+
+.tela-login {
+    height: 400px;
+    margin-bottom: 150px;
+}
+h2 {
+    margin: 80px 0 0px 0;
+    font-weight: 300;
+    text-align: center;
+    font-size: 50px;
+}
+.form {
+    margin-top: 85px; 
+    text-align: center;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: .4375em 0;
+    width: 321px;
+}
+.btnCadastro {
+    margin-top: 20px;
+    left: -56px;
+    background-color: #6f6767;
+    color: white;
+}
+.btnLogin {
+    left: 56px;
+}
+
+/* Finalizar Pedido */
+
+.paypal {
+    width: 500px;
+    margin-top: 10px;
+}
+
+.text-description {
+    text-align: center;
+    margin: 55px 0 50px 0;
+    font-weight: 300;
+    font-size: 40px;
+}
+.payment {
+    margin-bottom: 50px;
+}
+mat-form-field {
+    width: 450px;
+    margin: 0 10px 20px;
+}
+.formCred {
+    width: 350px;
+}
+.btns {
+    display: flex;
+}
+.btn-compra {
+    margin-left: 10px;
+}
+.btnModal {
+    margin-right: 10px;
+}
+.btn-cred {
+    margin-right: 10px;
+}
+.btnBoleto {
+    background-color: #40e0d0;
+    color: white;
+    margin-right: 10px;
+}
+.btn-pedido {
+    background-color: #40e0d0;
+    color: white;
+    margin-right: 10px;
+}
+.endereco p {
+    font-size: 17px;
+}
+
+@media (max-width: 425px) {
+
+    .text-description {
+        margin: 55px 0 50px 0;
+        font-weight: 300;
+        line-height: 50px;
+        font-size: 40px;
+    }
+    mat-form-field {
+        width: 250px;
+        margin: 0 10px 20px;
+    }
+    .formCred {
+        width: 250px;
+    }
+
+}
+@media (max-width: 320px) {
+
+    .text-description {
+        margin: 55px 0 50px 0;
+        font-weight: 300;
+        line-height: 50px;
+        font-size: 22px;
+    }
+    
+
+}

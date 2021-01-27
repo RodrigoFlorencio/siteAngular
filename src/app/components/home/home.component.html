@@ -1,0 +1,221 @@
+<div class="container-fluid header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Thoth Company E-commerce</h2>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="barra"></div>
+            </div>
+        </div>
+        <p class="text-header">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> 
+            Explicabo alias repellendus ad deserunt pariatur sapiente<br> 
+            ipsam repudiandae animi saepe
+        </p>
+    </div>
+</div>
+
+
+<!------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-description">
+                Produtos em destaques
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container box">
+    <div class="row">
+        <div *ngFor="let prod of produtos | slice:0:8" class="col-md-3 box-ft">
+            <div class="ft01">
+              
+                <a routerLink="compras/{{prod.id}}">
+                  <img class="img-fluid" [attr.src]="'http://localhost:3002/'+ prod.imagem" alt="">
+                  <img class="img-fluid ft-promo" width="95" height="39" [attr.src]="'http://localhost:3002/'+ prod.promo" alt="">
+                </a>
+
+            </div>
+            <div class="text-card">
+              <div class="content-nome">
+                <p>
+                  {{prod.nome}} ({{prod.tipo}})<br><br>
+                </p>
+              </div>
+
+              <div class="content-preco">
+                <span>{{prod.preco | currency: 'BRL'}}</span>
+                <button (click)="addTocart(prod)" type="button" class="btn btn-outline-primary"  
+                [disabled]="prod.quantidade < 1"
+                [class.btn-outline-danger]="prod.quantidade < 1">
+                    Add Carrinho
+                </button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------------------------------------------- Promoção ------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------>
+
+
+<div id="carouselExampleCaptions" class="carousel slide promo-slide" data-ride="carousel">
+  <ol class="carousel-indicators indicators-promo">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 promo">
+    
+            <p>Promoção da semana</p><br><br><br><br>
+    
+            <div class="promo-text">
+              Pitaya Branca
+            </div><br><br><br>
+    
+            <div class="promo-price">
+              R$ 64,98  (caixa)
+            </div><br><br>
+    
+            <div class="btn-compra">
+              <a routerLink="produtos">
+                  <div class="text-compra">
+                      Mais produtos
+                  </div>
+              </a>  
+            </div>
+    
+          </div>
+    
+          <div class="col-md-6 promo-img">
+            <img class="promoImg" src="/assets/img/pitaia.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+    
+          <div class="col-md-6 promo">
+    
+            <p>Promoção da semana</p><br><br><br><br>
+    
+            <div class="promo-text">
+              Pitaya Branca
+            </div><br><br><br>
+    
+            <div class="promo-price">
+              R$ 64,98  (caixa)
+            </div><br><br>
+    
+            <div class="btn-compra">
+              <a routerLink="produtos">
+                  <div class="text-compra">
+                      Mais produtos
+                  </div>
+              </a>  
+            </div>
+    
+          </div>
+    
+          <div class="col-md-6 promo-img">
+            <img class="promoImg" src="/assets/img/pitaia.png" alt="">
+          </div>
+    
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+    
+          <div class="col-md-6 promo">
+    
+            <p>Promoção da semana</p><br><br><br><br>
+    
+            <div class="promo-text">
+              Pitaya Branca
+            </div><br><br><br>
+    
+            <div class="promo-price">
+              R$ 64,98  (caixa)
+            </div><br><br>
+    
+            <div class="btn-compra">
+              <a routerLink="produtos">
+                  <div class="text-compra">
+                      Mais produtos
+                  </div>
+              </a>  
+            </div>
+    
+          </div>
+    
+          <div class="col-md-6 promo-img">
+            <img class="promoImg" src="/assets/img/pitaia.png" alt="">
+          </div>
+    
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<!--------------------------------------------- Newsletter ---------------------------------------------->
+<!------------------------------------------------------------------------------------------------------->
+
+
+<div class="newsletter">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
+          <div class="newsletter_title_container">
+            <div class="newsletter_icon umg-fluid"><img src="/assets/img/send.png" alt=""></div>
+            <div class="newsletter_title">Increva-se</div>
+            <div class="newsletter_text"><p>...se inscreva para receber nossas ofertas.</p></div>
+          </div>
+          <div class="newsletter_content clearfix">
+            <form action="#" class="newsletter_form">
+              <input matInput type="email" class="newsletter_input" placeholder="Insira seu e-mail">
+              <button class="newsletter_button">Inscrever</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
